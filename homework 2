@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="description" >
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Amna zafar">
+        <meta name="application-name" content="OpenStreetMap">
+    </head>
+<body>
+<img src="image.jpg" alt="Image description" usemap="#map"> 
+<map name="map"> 
+  <area shape="rect" coords="0,0,50,50" href="page1.html"> 
+  <area shape="rect" coords="50,50,100,100" href="page2.html"> 
+</map>
