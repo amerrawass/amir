@@ -1,0 +1,166 @@
+id (INT PRIMARY KEY AUTO_INCREMENT)
+full_name (VARCHAR(255))
+email (VARCHAR(255))
+gender (ENUM('Male', 'Female'))
+<?php
+// Connect to the database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "student_registration";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get the form data
+$full_name = $_POST['full_name'];
+$email = $_POST['email'];
+$gender = $_POST['gender'];
+
+// Validate the form data
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email address.";
+    exit;
+}
+
+// Insert the data into the database
+$sql = "INSERT INTO students (full_name, email, gender) VALUES ('$full_name', '$email', '$gender')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Registration successful.";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
+<?php
+// Connect to the database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "student_registration";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get the form data
+$full_name = $_POST['full_name'];
+$email = $_POST['email'];
+$gender = $_POST['gender'];
+
+// Validate the form data
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email address.";
+    exit;
+}
+
+// Insert the data into the database
+$sql = "INSERT INTO students (full_name, email, gender) VALUES ('$full_name', '$email', '$gender')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Registration successful.";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
+<?php
+// Connect to the database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "student_registration";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Retrieve the data from the database
+$sql = "SELECT * FROM students";
+$result = $conn->query($sql);
+
+// Display the data in a table
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<tr><th>ID</th><th>Full Name</th><th>Email</th><th>Gender</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["id"]. "</td><td>" . $row["full_name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["gender"]. "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "No students registered.";
+}
+
+$conn->close();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Registration Form</title>
+</head>
+<body>
+	<h2>Registration Form</h2>
+	<form method="POST" action="register.php">
+		<label for="full_name">Full Name:</label>
+		<input type="text" name="full_name" id="full_name" required>
+		<br>
+		<label for="email">Email Address:</label>
+		<input type="email" name="email" id="email" required>
+		<br>
+		<label>Gender:</label>
+		<input type="radio" name="gender" value="Male" id="male" required>
+		<label for="male">Male</label>
+		<input type="radio" name="gender" value="Female" id="female" required>
+		<label for="female">Female</label>
+		<br>
+		<input type="submit" name="submit" value="Register">
+	</form>
+	<br>
+	<h2>Registered Students</h2>
+	<?php
+	// Connect to the database
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "student_registration";
+
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	// Retrieve the data from the database
+	$sql = "SELECT * FROM students";
+	$result = $conn->query($sql);
+
+	// Display the data in a table
+	if ($result->num_rows > 0) {
+	    echo "<table>";
+	    echo "<tr><th>ID</th><th>Full Name</th><th>Email</th><th>Gender</th></tr>";
+	    while($row = $result->fetch_assoc()) {
+	        echo "<tr><td>" . $row["id"]. "</td><td>" . $row["full_name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["gender"]. "</td></tr>";
+	    }
+	    echo "</table>";
+	} else {
+	    echo "No students registered.";
+	}
+
+	$conn->close();
+	?>
+</body>
+</html>
