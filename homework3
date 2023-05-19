@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="description" >
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Amna zafar">
+        <meta name="application-name" content="OpenStreetMap">
+    </head>
+<body>
+<h1>Homework 3: Input types</h1>
+
+    <label>Text: </label><br>
+    <input type="text" name="fname" placeholder="write your first name" required><br>
+    <label>Hidden: </label><br>
+    <input type="password" name="pass"><br>
+    <label>Tel: </label><br>
+    <input type="tel" name="phone"><br>
+    <label>Email: </label><br>
+    <input type="email" name="email"><br>
+    <label>Range: </label><br>
+    <input type="range" name="range"><br>
+    <label>Search: </label><br>
+    <input type="search" name="search"><br>
+    <label>Image: </label><br>
+    <input type="image" src="s3.jpg" alt="Submit" width="300" height="300"><br>
+    <label>Week: </label><br>
+    <input type="week" name="week"><br>
+    <label>URL: </label><br>
+    <input type="url" name="url"><br>
+    <label>Datetime-local: </label><br>
+    <input type="datetime-local" name="datetime-local"><br>
+    <label>Month: </label><br>
+    <input type="month" name="month"><br>
+    <label>Time: </label><br>
+    <input type="time" name="time"><br>
+<br>
