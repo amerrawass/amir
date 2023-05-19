@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="description" >
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Amna zafar">
+        <meta name="application-name" content="OpenStreetMap">
+    </head>
+<body>
+<h1>Homework 4: Forms</h1>
+
+<form action="store.php" method="get" target="_blank">
+    <!-- text -->
+        <label>First Name: </label><br>
+        <input type="text" name="fname" placeholder="write your first sname" required><br>
+        <label>Last Name: </label><br>
+        <input type="text" name="lname" minlength="3" maxlength="8"><br>
+        <label>Password: </label><br>
+        <input type="password" name="pass"><br>
+        <label>Phone: </label><br>
+        <input type="number" name="phone"><br>
+    <br>
+    <!-- radio button -->
+        <label>Gender: </label><br>
+        <input type="radio" name="g">
+        <label>Female </label><br>
+        <input type="radio" name="g">
+        <label>Male </label><br>
+    <br>
+    <!-- checkbox -->
+        <label>Interest:</label><br>
+        <input type="checkbox" name="c">
+        <label>Book</label><br>
+        <input type="checkbox" name="c">
+        <label>Web</label><br>
+        <input type="checkbox" name="c">
+        <label>Shopping</label><br>
+    <br>
+    <label>Class:</label><br>
+    <select>
+        <option value="opt1">opt1</option>
+        <option value="opt2">opt2</option>
+        <option value="opt3">opt3</option>
+    </select><br>
+    <br>
+    <!-- submit -->
+        <input type="submit" value="Submit Form">
+    </form>
+
+    <h2>Canvas</h2> 
+    <canvas id="canvas" height="100" width="400" style="border:1px solid #000000;"></canvas>
+
+</body>
+<script>
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.strokeText("Internet Based Programming", 10, 50);
+    </script>
+    
+</html>
